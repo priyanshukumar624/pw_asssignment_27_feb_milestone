@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Change Color on Click</title>
+  </head>
+  <body>
+    <button id="color-btn">HII PLEASE CLICK ME TO COLOR CHANGE</button>
+    <h1>PRIYANSHU SINGH RAJPUT</h1>
+    <STYle>
+        #color-btn{
+            color: red;
+            cursor: pointer;
+        }
+        .h1{
+            color: yellow;
+        }
+    </STYle>
+
+    <script>
+      const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
+      const button = document.getElementById("color-btn");
+
+      button.addEventListener("click", () => {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = randomColor;
+      });
+    </script>
+  </body>
+</html>

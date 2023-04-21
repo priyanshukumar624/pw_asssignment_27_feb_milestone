@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Password Validation</title>
+	<style>
+		.error {
+			color: red;
+		}
+
+		.success {
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<form id="loginForm">
+		<label for="email">Email:</label>
+		<input type="text" id="email" name="email"><br>
+
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password"><br>
+
+		<input type="submit" value="Submit">
+	</form>
+
+	<p id="result"></p>
+
+	<script>
+		const form = document.querySelector('#loginForm');
+		const email = document.querySelector('#email');
+		const password = document.querySelector('#password');
+		const result = document.querySelector('#result');
+
+		form.addEventListener('submit', function(event) {
+			event.preventDefault();
+
+			if (email.value.indexOf('@') === -1 || password.value.length < 8) {
+				result.textContent = 'Invalid email or password!';
+				result.classList.add('error');
+				result.classList.remove('success');
+			} else {
+				result.textContent = 'Valid email and password!';
+				result.classList.add('success');
+				result.classList.remove('error');
+			}
+		});
+	</script>
+</body>
+</html>

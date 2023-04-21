@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic List Items</title>
+</head>
+<body>
+	<button id="add-btn">Add Item</button>
+	<ol id="list"></ol>
+	<script>
+        const items = ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js'];
+
+function addListItem() {
+	const list = document.getElementById('list');
+	if (items.length > 0) {
+		const item = items.shift();
+		const listItem = document.createElement('li');
+		listItem.innerText = item;
+		list.appendChild(listItem);
+	} else {
+		alert('All items have been added!');
+	}
+}
+const addBtn = document.getElementById('add-btn');
+addBtn.addEventListener('click', addListItem);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Move Image with Arrow Keys</title>
+	<style>
+		#image {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<img id="image" src="IMG_20210826_164543_706.webp">
+	<script>
+		const image = document.getElementById('image');
+		const step = 10;
+
+		document.addEventListener('keydown', (event) => {
+			switch(event.code) {
+				case 'ArrowUp':
+					image.style.top = `${parseInt(image.style.top) - step}px`;
+					break;
+				case 'ArrowDown':
+					image.style.top = `${parseInt(image.style.top) + step}px`;
+					break;
+				case 'ArrowLeft':
+					image.style.left = `${parseInt(image.style.left) - step}px`;
+					break;
+				case 'ArrowRight':
+					image.style.left = `${parseInt(image.style.left) + step}px`;
+					break;
+				default:
+					return;
+			}
+		});
+	</script>
+</body>
+</html>
